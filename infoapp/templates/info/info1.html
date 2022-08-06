@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recommend1.css' %}">
+    <script src="jquerymin.js"></script>
+	<script src="jqueryui.js"></script>
+    <link rel="stylesheet" href="{% static 'css/recommend1.css' %}">
+    <title>정보 페이지</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="intro_bg">
+
+            <!-- header -->
+            <div class="header">
+
+                <div class="logo">
+                    <a href="" class="logoname">DangCoffee</a>
+                </div>
+
+            <ul class = "intro_title">
+                <div class="searcharea">
+                    <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
+                    <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
+                    <form class="form-inline" action="{% url 'search:searchresult' %}" method="get">
+                        <input type="search" placeholder="Search" name="keyword">
+                    </form>
+                </div>
+            </ul>
+
+
+                <ul class="nav">
+                    <li><a href="#">정보</a></li>
+                    <li><a href="#">추천</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+
+                <ul class="nav">
+                    <li><a href="#">menus</a></li>
+                    <li><a href="#">categories</a></li>
+                    <li><a href="#">products</a></li>
+                    <li><a href="#">allergies</a></li>
+                    <li><a href="#">allergies_products</a></li>
+                    <li><a href="#">nutritions</a></li>
+
+
+                </ul>
+
+            </div>
+            <!-- // header -->
+
+<!-- drink list -->
+            <li>
+                <h1 class="drink">음료 검색</h1>
+
+
+            <body>
+    <div class="wrap">
+
+
+            <!-- header -->
+            <div class="header">
+
+            <ul class = "intro_title">
+                <div class="searcharea">
+                    <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
+                    <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
+                    <form class="form-inline" action="{% url 'search:searchresult' %}" method="get">
+                        <input type="search" placeholder="Search" name="keyword">
+                    </form>
+                </div>
+            </ul>
+
+
+                <section>
+                    <div class="div">
+                        <input type="checkbox" id="a1" \>
+                        <label for="a1">커피/라떼</label>
+                    </div>
+
+                    <div class="div">
+                        <input type="checkbox" id="b1" \>
+                        <label for="b1">티/티 라떼</label>
+                    </div>
+
+                    <div class="div">
+                        <input type="checkbox" id="c1" \>
+                        <label for="c1">에이드/스무디</label>
+                    </div>
+
+                    <div class="div">
+                        <input type="checkbox" id="d2" \>
+                        <label for="d2">프라페</label>
+                    </div>
+
+                    <div class="div">
+                        <input type="checkbox" id="e3" \>
+                        <label for="e3">생과일 주스</label>
+                    </div>
+
+                    <div class="div">
+                        <input type="checkbox" id="f4" \>
+                        <label for="f4">차</label>
+                    </div>
+                </section>
+            </li>
+            <!-- // drink list -->

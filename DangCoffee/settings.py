@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'infoapp',
+=======
+    'recommend',
+>>>>>>> 4b8ac64d3b3fc8879acfeb137cf51e972e96f2c5
 ]
 
 MIDDLEWARE = [
