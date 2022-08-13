@@ -18,6 +18,7 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
+<<<<<<< HEAD
 def search(request):
     if request.method == "POST":
         product = Product()
@@ -41,7 +42,41 @@ def search(request):
             Q(cafe__icontains=query)
         )
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+=======
+def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
+    if request.method == "POST":
 
+        cafe = request.POST.getlist('cafe', None)
+        category = request.POST.getlist('category', None)
+        maxvalue = request.GET.get('priceRangeMax')
+        minvalue = request.GET.get('priceRangeMin')
+        query = "Tag List"
+
+        q = Q()
+        if cafe:
+            q &= Q(cafe__icontain=cafe)
+        if category:
+            q &= Q(category__icontain=category)
+        if maxvalue and minvalue:
+            q &= Product.objects.filter(price__range=[minvalue, maxvalue])
+
+        q &= Q(price__range=(minvalue, maxvalue))
+
+        products = Product.objects.filter(q)
+
+    else:
+
+        query = request.GET.get('keyword')
+
+        j = Q()
+        if query:
+            j |= Q(name__icontains=query)
+            j |= Q(description__icontains=query)
+            j |= Q(cafe__icontains=query)
+        products = Product.objects.filter(j)
+>>>>>>> 54e81e6ee915ecbe6e3c8e8faa0a873ddecd8551
+
+    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
 def input_test(request):
     if request.POST:
