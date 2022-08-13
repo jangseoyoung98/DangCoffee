@@ -1,24 +1,18 @@
 *{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Jua', sans-serif;
     list-style: none;
     text-decoration: none;
-    border-collapse: 0px;
+    border-collapse: collapse;
     margin: 0px;
     padding: 0px;
     color: black;
 }
 
 .intro_bg{
-    background-image:url("./image/cafeimage.jpg");
+    background-image: url("/static/img/cafeimage.jpg");
     background-size: cover;
-    height: 718px;
+    height: 700px;
 }
-
-
-
-
-
-
 
 /* 페이지 맨 윗 부분 */
 .header{
@@ -42,16 +36,15 @@
     height: 40px;
     padding-left:10px;
     padding-top:20px;
-    font: bold;
+    font-weight: bold;
     font-size:40px;
 }
 
 .nav{
     display: flex;
     justify-content: flex-end;
-    margin-left:0;
     line-height: 86px;
-    width:calc(1280px-300px);
+    width:calc(1280px - 300px);
     color: white;
     margin-left: 400px;
 }
@@ -79,10 +72,9 @@
 /* 검색창 */
 .intro_title{
     display: flex;
-    flex-direction: colume;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    height:calc(718px-86px);
     padding-top: 200px;
 }
 
@@ -105,7 +97,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: calc(718px-86px);
     padding-top: 200px;
 }
 
@@ -243,7 +234,11 @@ label{
 
 label::before{
     content: "";
+<<<<<<< HEAD
     background: url("./image/check-circle.svg");
+=======
+    background: url("/static/img/check-circle.svg");
+>>>>>>> 4c83e5a8d723935872ac2e8ec236b1126e7d4455
     background-position: center;
     background-size: contain;
     width: 24px;
@@ -445,4 +440,8 @@ footer{
     display: inline-block;
     margin-right: 60px;
 }
+<<<<<<< HEAD
 /* footer */
+=======
+/* footer */
+>>>>>>> 4c83e5a8d723935872ac2e8ec236b1126e7d4455

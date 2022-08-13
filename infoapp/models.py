@@ -2,57 +2,52 @@ from django.db import models
 
 # Create your models here.
 
+
+from django.db import models
+
+from django.db import models
+
+# Create your models here.
+
 from django.db import models
 
 
 class Menu(models.Model):
     name = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'menus'
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
     menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = 'categories'
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
+    product_id = models.IntegerField(verbose_name= 'app_id', null=True, blank = True)
     korean_name = models.CharField(max_length=100)
     english_name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
-    is_new = models.BooleanField(default=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = 'products'
+    def __str__(self):
+        return self.korean_name
 
 
 class Image(models.Model):
     image_url = models.URLField(max_length=2000)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
-    class Meta:
-        db_table = 'images'
-
-
 class Allergy(models.Model):
     name = models.CharField(max_length=30)
     products = models.ManyToManyField('Product', through='AllergyProduct')
-
-    class Meta:
-        db_table = 'allergies'
-
+    def __str__(self):
+        return self.name
 
 class AllergyProduct(models.Model):
     allergy = models.ForeignKey('Allergy', on_delete=models.CASCADE)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = 'allergies_products'
 
 
 class Nutrition(models.Model):
@@ -65,5 +60,7 @@ class Nutrition(models.Model):
     size = models.CharField(max_length=30)
     product = models.OneToOneField('Product', on_delete=models.CASCADE)
 
-    class Meta:
-        db_table = 'nutritions'
+class info_list(models.Model):
+    info_list = models.CharField(verbose_name='info_list', max_length=100)
+    def __str__(self):
+        return self.info_list

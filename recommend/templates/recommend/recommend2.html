@@ -1,40 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/recommend2.css' %">
-    <title>추천 사이트</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
 
 <body>
     <div class="wrap">
-        <div class="intro_bg">
-
-            <!-- header -->
-            <div class="header">
-
-                <div class="logo">
-                    <a href="" class="logoname">DangCoffee</a>
-                </div>
-
-
-                <ul class="nav">
-                    <li><a href="#">정보</a></li>
-                    <li><a href="#">추천</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-
-            </div>
-            <!-- // header -->
-
-
             <!-- tag -->
             <ul class = "intro_title">
                 <div class="searcharea">
-                    <p>#tag</p>
+                    <h3><b>{{ query }}</b></h3>
                 </div>
             </ul>
             <!-- // tag -->
@@ -57,12 +31,12 @@
                                 <p class="card-text">{{product.price}}</p>
                             </div>
                         </div>
-                    {% end for %}
+                    {% endfor %}
 
             </li>
 
             <li>
-                <h3 class="result-map">지도</h3>
+                <h3 class="result-text">지도</h3>
             </li>
         </ul>
         <!-- // research result -->
@@ -71,20 +45,10 @@
 
 
     </div>
-
-
-    <!-- footer -->
-    <footer>
-        <nav>
-            <a href='' target='_blank'>DangCoffee</a>
-        </nav>
-        <p>
-            <span>DangCoffee</span><br/>
-            <span>Copyright 2022. All Rights Reserved.</span>
-        </p>
-    </footer>
-    <!-- // footer -->
-
 </body>
+<<<<<<< HEAD
 </html>
 
+=======
+{% endblock %}
+>>>>>>> e271b359f8ee51e3ea8ab334f0ccb5e2ffda04f9
