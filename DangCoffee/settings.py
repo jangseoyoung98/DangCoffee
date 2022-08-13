@@ -37,17 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-<<<<<<< HEAD
     'infoapp',
-=======
     'recommend',
->>>>>>> 4b8ac64d3b3fc8879acfeb137cf51e972e96f2c5
-=======
     'beverage',
-    'infoapp',
-    'recommend',
->>>>>>> e271b359f8ee51e3ea8ab334f0ccb5e2ffda04f9
 ]
 
 MIDDLEWARE = [

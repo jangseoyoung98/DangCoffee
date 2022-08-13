@@ -7,10 +7,6 @@ from django.views import View
 # Create your views here.
 
 
-<<<<<<< HEAD
-
-
-=======
 from django.db.models.fields import json
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
@@ -30,4 +26,4 @@ def productresult(request):
 	if query:
 		products = Product.objects.filter(korean_name__contains=query)
 	return render(request, 'infoapp/result.html', {'products': products})
->>>>>>> e271b359f8ee51e3ea8ab334f0ccb5e2ffda04f9
+

@@ -18,8 +18,6 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 def search(request):
     if request.method == "POST":
         product = Product()
@@ -43,11 +41,10 @@ def search(request):
             Q(cafe__icontains=query)
         )
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
-=======
-def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
-=======
+
+# def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
+
 def search(request):
->>>>>>> 00bc27328160f9a371dfcb7b8bb4110561d7d4bd
     if request.method == "POST":
 
         cafe = request.POST.getlist('cafe')
@@ -78,10 +75,6 @@ def search(request):
             j |= Q(description__icontains=query)
             j |= Q(cafe__icontains=query)
         products = Product.objects.filter(j)
-<<<<<<< HEAD
->>>>>>> 54e81e6ee915ecbe6e3c8e8faa0a873ddecd8551
-=======
->>>>>>> 00bc27328160f9a371dfcb7b8bb4110561d7d4bd
 
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
