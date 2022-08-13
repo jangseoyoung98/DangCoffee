@@ -19,6 +19,7 @@ def recommend2(request):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def search(request):
     if request.method == "POST":
         product = Product()
@@ -44,10 +45,13 @@ def search(request):
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 =======
 def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
+=======
+def search(request):
+>>>>>>> 00bc27328160f9a371dfcb7b8bb4110561d7d4bd
     if request.method == "POST":
 
-        cafe = request.POST.getlist('cafe', None)
-        category = request.POST.getlist('category', None)
+        cafe = request.POST.getlist('cafe')
+        category = request.POST.getlist('category')
         maxvalue = request.GET.get('priceRangeMax')
         minvalue = request.GET.get('priceRangeMin')
         query = "Tag List"
@@ -74,7 +78,10 @@ def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
             j |= Q(description__icontains=query)
             j |= Q(cafe__icontains=query)
         products = Product.objects.filter(j)
+<<<<<<< HEAD
 >>>>>>> 54e81e6ee915ecbe6e3c8e8faa0a873ddecd8551
+=======
+>>>>>>> 00bc27328160f9a371dfcb7b8bb4110561d7d4bd
 
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
