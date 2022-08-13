@@ -1,4 +1,3 @@
-from django.http import request
 from django.shortcuts import render
 from .models import Product
 from django.db.models import Q
@@ -19,36 +18,33 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
-def searchresult(request):
-    if 'keyword' in request.GET:
+def search(request):
+    if request.method == "POST":
+        product = Product()
+        if product.is_valid():
+            product.cafe = request.POST.getlist('cafe', None)
+            product.category = request.POST.getlist('drink', None)
+            product.image = request.FILES['image']
+            query = product.cafe and product.category
+            if product:
+                products = Product.objects.all().filter(
+                    Q(cafe=product.cafe) &
+                    Q(category=product.category)
+                )
+
+    else:
         query = request.GET.get('keyword')
-        # GET방식으로 받은 KEYWORD를 QUERY라고 칭함
 
         products = Product.objects.all().filter(
             Q(name__icontains=query) |
             Q(description__icontains=query) |
             Q(cafe__icontains=query)
         )
-        # PRODUCT에서 filter를 통해 검사
-        # __icontains로 name 안에 query와 동일한 값이 있는지 대소문자 상관없이 검색
-
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
-    # 검색결과로 query랑 products 리턴
 
-
-def filterresearch(request):
-    if 'cafelist' and 'drinklist' in request.GET:
-        cafe_list = request.GET.getlist('cafelist[]')
-        drink_list = request.GET.getlist('drinklist[]')
-
-        products = Product.objects.all().filter(
-            Q(cafe__icontains=cafe_list) &
-            Q(name_icontains=drink_list)
-        )
-
-    return render(request, 'recommend2.html', {'products': products})
 
 def input_test(request):
     if request.POST:
         list_item = request.POST.getlist('test')
         print(list_item)
+
