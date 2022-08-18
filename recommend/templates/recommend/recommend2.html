@@ -4,14 +4,14 @@
 {% block content %}
 
 <body>
-    <div class="wrap">
-            <!-- tag -->
-            <ul class = "intro_title">
-                <div class="searcharea">
-                    <h3><b>{{ query }}</b></h3>
-                </div>
-            </ul>
-            <!-- // tag -->
+    <div class="recommend2">
+        <!-- tag -->
+        <ul class = "intro_title">
+            <div class="searcharea">
+                <h1 class="searchtext" ><b style="color: white; border-bottom: 4px solid white; margin-bottom: 10px;">{{ query }}</b></h1>
+            </div>
+        </ul>
+        <!-- // tag -->
 
 
         </div>
@@ -19,7 +19,7 @@
 
 
         <!-- research result -->
-        <ul class="research-result">
+        <ul class="research-result" style="margin-left:300px">
             <li>
                 <h3 class="result-text">검색어 : <b>{{ query }}</b></h3>    <!-- 검색어 출력 -->
 
@@ -48,9 +48,6 @@
             </li>
         </ul>
         <!-- // research result -->
-
-
-
 
     </div>
 </body>
