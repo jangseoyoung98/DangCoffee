@@ -8,6 +8,8 @@
     color: black;
 }
 
+
+
 .intro_bg{
     background-size: cover;
     height: 120px;
@@ -88,6 +90,40 @@
     border-radius:10px;
     text-align: center;
 }
+
+.info_search > form > input{
+    border: none;
+    width: 500px;
+    height: 40px;
+    background-color: gray;
+    color:black;
+    border-radius:10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-search-btn > form > botton{
+    border: none;
+    width: 500px;
+    height: 40px;
+    background-color: gray;
+    color:black;
+    border-radius:10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu_check {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 500px;
+}
+
+.tag{
+    justify-content: center;
+}
+
+
 /* 검색창 */
 
 
